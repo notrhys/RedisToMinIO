@@ -41,7 +41,6 @@ public class BackupService extends BackupObject {
         try {
             this.uploadToCloud();
         } catch (IOException | NoSuchAlgorithmException | InvalidKeyException e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
         this.cleanUp();
@@ -91,7 +90,6 @@ public class BackupService extends BackupObject {
                             .filename(this.zipFile.getAbsolutePath())
                             .build());
         } catch (MinioException e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }
