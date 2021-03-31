@@ -32,6 +32,7 @@ public class BackupService extends BackupObject {
 
     @Override
     public void run() {
+        this.data.clear();
         this.createFolder();
         this.connectToRedis();
         this.grabRedisKeys();
